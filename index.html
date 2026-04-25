@@ -101,7 +101,7 @@
                 
                 <div class="mb-8 flex items-center justify-center gap-3">
                     <div class="h-[1px] w-8 bg-indigo-500/50"></div>
-                    <span class="text-indigo-400 text-[10px] font-black tracking-[0.3em] uppercase">Earth Bio-Link Protocol</span>
+                    <span class="text-indigo-400 text-[10px] font-black tracking-[0.3em] uppercase">Earth Bio Link Protocol</span>
                     <div class="h-[1px] w-8 bg-indigo-500/50"></div>
                 </div>
 
@@ -111,11 +111,11 @@
                 </p>
 
                 <div class="grid sm:grid-cols-2 gap-4">
-                    <button onclick="switchView('donate')" class="btn-primary flex items-center justify-center gap-3 p-6 text-white rounded-[1.5rem] font-black text-lg">
+                    <button onclick="window.switchView('donate')" class="btn-primary flex items-center justify-center gap-3 p-6 text-white rounded-[1.5rem] font-black text-lg">
                         <i class="fas fa-heart"></i> SUPPORT MISSION
                     </button>
 
-                    <button onclick="switchView('matrix')" class="flex items-center justify-center gap-3 p-6 bg-slate-800/80 hover:bg-slate-700 text-white transition-all rounded-[1.5rem] font-bold text-lg border border-slate-700">
+                    <button onclick="window.switchView('matrix')" class="flex items-center justify-center gap-3 p-6 bg-slate-800/80 hover:bg-slate-700 text-white transition-all rounded-[1.5rem] font-bold text-lg border border-slate-700">
                         ENTER MATRIX <i class="fas fa-chevron-right ml-2 text-sm"></i>
                     </button>
                 </div>
@@ -127,11 +127,11 @@
     <div id="view-donate" class="view relative">
         <div class="min-h-screen bg-[#050508] flex flex-col">
             <nav class="h-16 px-6 flex items-center justify-between border-b border-slate-800 bg-slate-900/90 backdrop-blur-md sticky top-0 z-20">
-                <button onclick="switchView('gatekeeper')" class="text-slate-400 hover:text-white flex items-center gap-2 font-bold px-4 py-2 hover:bg-slate-800 rounded-xl transition-colors">
+                <button onclick="window.switchView('gatekeeper')" class="text-slate-400 hover:text-white flex items-center gap-2 font-bold px-4 py-2 hover:bg-slate-800 rounded-xl transition-colors">
                     <i class="fas fa-arrow-left"></i> EXIT
                 </button>
                 <div class="font-black text-white text-[10px] tracking-widest uppercase">Mission Contribution</div>
-                <button onclick="switchView('matrix')" class="px-5 py-2 btn-primary text-white rounded-xl font-black text-xs">TRAINING MODULES</button>
+                <button onclick="window.switchView('matrix')" class="px-5 py-2 btn-primary text-white rounded-xl font-black text-xs">TRAINING MODULES</button>
             </nav>
             <div class="full-frame-viewport">
                 <iframe src="https://givebutter.com/starbound-matrix" title="Donation Wall" allow="payment"></iframe>
@@ -143,19 +143,19 @@
     <div id="view-matrix" class="view relative">
         <div class="min-h-screen pb-20">
             <nav class="p-6 border-b border-white/5 flex justify-between items-center sticky top-0 bg-[#050508]/90 backdrop-blur-xl z-50">
-                <div class="flex items-center gap-4 cursor-pointer" onclick="switchView('gatekeeper')">
+                <div class="flex items-center gap-4 cursor-pointer" onclick="window.switchView('gatekeeper')">
                     <div class="w-10 h-10 bg-white text-slate-950 rounded-xl flex items-center justify-center shadow-lg">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <span class="font-black text-xl tracking-tighter">STARBOUND MATRIX</span>
                 </div>
-                <button onclick="switchView('donate')" class="bg-indigo-600 text-white px-6 py-2.5 rounded-2xl text-[10px] font-black uppercase">Support Project</button>
+                <button onclick="window.switchView('donate')" class="bg-indigo-600 text-white px-6 py-2.5 rounded-2xl text-[10px] font-black uppercase">Support Project</button>
             </nav>
 
             <main class="max-w-7xl mx-auto px-6 pt-16 relative z-10">
                 <div class="mb-16">
                     <h2 class="text-5xl font-black text-white mb-4 tracking-tight leading-[0.9]">Behavioral Modules</h2>
-                    <p class="text-slate-400 text-lg">Select a terrestrial subject to begin study.</p>
+                    <p class="text-slate-400 text-lg">Select a terrestrial subject to begin behavioral analysis.</p>
                 </div>
 
                 <div id="game-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -169,7 +169,7 @@
     <div id="view-player" class="view relative">
         <div class="min-h-screen flex flex-col">
             <nav class="h-16 px-6 flex items-center justify-between border-b border-slate-800 bg-slate-900/90 backdrop-blur-md sticky top-0 z-20">
-                <button onclick="switchView('matrix')" class="text-slate-400 hover:text-white flex items-center gap-2 font-bold px-4 py-2 hover:bg-slate-800 rounded-xl transition-colors">
+                <button onclick="window.switchView('matrix')" class="text-slate-400 hover:text-white flex items-center gap-2 font-bold px-4 py-2 hover:bg-slate-800 rounded-xl transition-colors">
                     <i class="fas fa-chevron-left"></i> BACK TO MODULES
                 </button>
                 <div id="active-game-title" class="font-black text-indigo-400 text-[10px] tracking-widest uppercase">LOADING MODULE...</div>
@@ -186,15 +186,15 @@
     <script>
         const games = [
             { id: 1, title: "Axolotl Regeneration", desc: "Analyze regenerative behaviors and aquatic stasis for hibernation research.", cat: "Regeneration", url: "https://krystalguzman.github.io/axolotlregeneration/", icon: "🧬", tags: ["Aquatic"] },
-            { id: 2, title: "Octo Clinic", desc: "Master multi-limbed coordination and fluid logic in medical simulations.", cat: "Cognition", url: "https://krystalguzman.github.io/octoclinic/", icon: "🐙", tags: ["Precision"] },
-            { id: 3, title: "Praying Mantis Ambush", desc: "Observe predatory stillness and precision strike mechanics for tactical training.", cat: "Tactical", url: "https://krystalguzman.github.io/prayingmantis/", icon: "🦗", tags: ["Ambush"] },
-            { id: 4, title: "Cricket Morse Code", desc: "Decipher acoustic communication and vibrational signals in low-visibility environments.", cat: "Comm-Link", url: "https://krystalguzman.github.io/cricketmorsecode/", icon: "🎵", tags: ["Audio"] },
-            { id: 5, title: "Pet Routine", desc: "Study domesticated social hierarchies and human-animal symbiotic bonds.", cat: "Social", url: "https://krystalguzman.github.io/petdogandcatroutine/", icon: "🐕", tags: ["Social"] },
-            { id: 6, title: "Ocelot Lab", desc: "Simulate high-speed tracking and agility behaviors in jungle-link environments.", cat: "Mobility", url: "https://krystalguzman.github.io/ocelotlab/", icon: "🐆", tags: ["Stealth"] },
-            { id: 7, title: "Bee Logic", desc: "Study swarm intelligence and hive-mind decision making for drone protocols.", cat: "Hive Mind", url: "https://krystalguzman.github.io/beelogic/", icon: "🐝", tags: ["Swarm"] }
+            { id: 2, title: "Octo Clinic", desc: "Master multi limbed coordination and fluid logic in medical simulations.", cat: "Cognition", url: "https://krystalguzman.github.io/octoclinic/", icon: "🐙", tags: ["Precision"] },
+            { id: 3, title: "Praying Mantis", desc: "Observe predatory stillness and precision strike mechanics for tactical training.", cat: "Tactical", url: "https://krystalguzman.github.io/prayingmantis/", icon: "🦗", tags: ["Ambush"] },
+            { id: 4, title: "Cricket Morse Code", desc: "Decipher acoustic communication and vibrational signals in low visibility environments.", cat: "Comm Link", url: "https://krystalguzman.github.io/cricketmorsecode/", icon: "🎵", tags: ["Audio"] },
+            { id: 5, title: "Pet Routine", desc: "Study domesticated social hierarchies and human animal symbiotic bonds.", cat: "Social", url: "https://krystalguzman.github.io/petdogandcatroutine/", icon: "🐕", tags: ["Social"] },
+            { id: 6, title: "Ocelot Lab", desc: "Simulate high speed tracking and agility behaviors in jungle link environments.", cat: "Mobility", url: "https://krystalguzman.github.io/ocelotlab/", icon: "🐆", tags: ["Stealth"] },
+            { id: 7, title: "Bee Logic", desc: "Study swarm intelligence and hive mind decision making for drone protocols.", cat: "Hive Mind", url: "https://krystalguzman.github.io/beelogic/", icon: "🐝", tags: ["Swarm"] }
         ];
 
-        function createStarfield() {
+        window.createStarfield = function() {
             const container = document.getElementById('starfield');
             for (let i = 0; i < 80; i++) {
                 const star = document.createElement('div');
@@ -209,25 +209,26 @@
             }
         }
 
-        function switchView(viewId) {
+        window.switchView = function(viewId) {
             document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
             const target = document.getElementById(`view-${viewId}`);
             if (target) target.classList.add('active');
             
             if (viewId !== 'player') {
-                document.getElementById('game-iframe').src = 'about:blank';
+                const iframe = document.getElementById('game-iframe');
+                if (iframe) iframe.src = 'about:blank';
             }
             window.scrollTo(0,0);
         }
 
-        function launchModule(index) {
+        window.launchModule = function(index) {
             const game = games[index];
             document.getElementById('active-game-title').innerText = game.title;
             document.getElementById('game-iframe').src = game.url;
-            switchView('player');
+            window.switchView('player');
         }
 
-        function renderGames() {
+        window.renderGames = function() {
             const grid = document.getElementById('game-grid');
             grid.innerHTML = games.map((game, index) => `
                 <div class="glass group rounded-[2rem] overflow-hidden hover:border-indigo-500/50 transition-all hover:-translate-y-2 flex flex-col shadow-2xl">
@@ -241,7 +242,7 @@
                         <span class="text-[9px] font-black text-indigo-400 tracking-[0.2em] uppercase mb-2">${game.cat}</span>
                         <h3 class="text-2xl font-black text-white mb-3 group-hover:text-indigo-300 transition-colors leading-tight">${game.title}</h3>
                         <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-1">${game.desc}</p>
-                        <button onclick="launchModule(${index})" class="w-full py-4 bg-white/5 hover:bg-white text-white hover:text-slate-950 rounded-2xl font-black text-[10px] tracking-widest transition-all border border-white/10 uppercase">
+                        <button onclick="window.launchModule(${index})" class="w-full py-4 bg-white/5 hover:bg-white text-white hover:text-slate-950 rounded-2xl font-black text-[10px] tracking-widest transition-all border border-white/10 uppercase">
                             Load Module
                         </button>
                     </div>
@@ -255,8 +256,8 @@
         }
 
         window.onload = () => {
-            createStarfield();
-            renderGames();
+            window.createStarfield();
+            window.renderGames();
         };
     </script>
 </body>
